@@ -16,6 +16,6 @@ export function calculate() {
     }
     const daysUntilBirthday = nextBirthday.diff(today, 'day')
 
-    return {daysUntilBirthday, age, daysAlive}
+    return {daysUntilBirthday, age, daysAlive, birthDateInput}
 }
 calculateBtn.addEventListener("click", renderResults)

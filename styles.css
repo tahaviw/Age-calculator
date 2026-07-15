@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+  background: linear-gradient(160deg, #f8fafc 0%, #f1f5f9 30%, #e8f0fe 70%, #dce8fb 100%);
+  background-attachment: fixed;
+  color: #1e293b;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #0f172a;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  position: relative;
+}
+
+h1::after {
+  content: '';
+  position: absolute;
+  bottom: -0.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #60a5fa, #3b82f6);
+  border-radius: 999px;
+}
+
+#birthdate {
+  appearance: none;
+  -webkit-appearance: none;
+  background: #ffffff;
+  padding: 1rem 1.25rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #1e293b;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.04);
+  outline: none;
+  width: 100%;
+  max-width: 380px;
+  margin-bottom: 1.25rem;
+  display: block;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  letter-spacing: 0.01em;
+}
+
+#birthdate:focus {
+  box-shadow: 0 6px 28px rgba(59, 130, 246, 0.12), 0 1px 3px rgba(0, 0, 0, 0.04);
+  background: #ffffff;
+}
+
+#birthdate:hover {
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+#birthdate::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+
+#birthdate:hover::-webkit-calendar-picker-indicator {
+  opacity: 1;
+}
+
+#calculateBtn {
+  display: block;
+  width: 100%;
+  max-width: 380px;
+  margin: 0 auto 2.5rem auto;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: #ffffff;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border-radius: 16px;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.18), 0 2px 6px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+  border: none;
+}
+
+#calculateBtn:hover {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  box-shadow: 0 12px 28px rgba(37, 99, 235, 0.28), 0 2px 8px rgba(0, 0, 0, 0.06);
+  transform: translateY(-2px);
+}
+
+#calculateBtn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.22), 0 1px 4px rgba(0, 0, 0, 0.06);
+  transition: all 0.1s ease;
+}
+
+#calculateBtn:focus-visible {
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5), 0 8px 24px rgba(37, 99, 235, 0.18);
+}
+
+#results {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.status-msg {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #64748b;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04), 0 1px 4px rgba(0, 0, 0, 0.02);
+  letter-spacing: 0.01em;
+}
+
+.ageDisplay,
+.daysAliveDisplay,
+.nextBirthdayDisplay {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04), 0 1px 4px rgba(0, 0, 0, 0.02);
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #334155;
+  line-height: 1.5;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  letter-spacing: 0.01em;
+  position: relative;
+  overflow: hidden;
+}
+
+.ageDisplay:hover,
+.daysAliveDisplay:hover,
+.nextBirthdayDisplay:hover {
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.06), 0 2px 6px rgba(0, 0, 0, 0.03);
+  transform: translateY(-1px);
+}
+
+.ageDisplay {
+  border-left: 4px solid #3b82f6;
+}
+
+.daysAliveDisplay {
+  border-left: 4px solid #60a5fa;
+}
+
+.nextBirthdayDisplay {
+  border-left: 4px solid #93c5fd;
+}
+
+.ageDisplay::first-letter,
+.daysAliveDisplay::first-letter,
+.nextBirthdayDisplay::first-letter {
+  font-weight: 700;
+  color: #1e293b;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 2rem 1.25rem;
+    justify-content: flex-start;
+    padding-top: 3.5rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 2.25rem;
+  }
+
+  h1::after {
+    width: 48px;
+    height: 3px;
+    bottom: -0.6rem;
+  }
+
+  #birthdate,
+  #calculateBtn {
+    max-width: 100%;
+    font-size: 1rem;
+  }
+
+  #birthdate {
+    padding: 0.95rem 1.1rem;
+  }
+
+  #calculateBtn {
+    padding: 0.95rem 2rem;
+  }
+
+  #results {
+    max-width: 100%;
+    gap: 0.85rem;
+  }
+
+  .ageDisplay,
+  .daysAliveDisplay,
+  .nextBirthdayDisplay {
+    padding: 1.1rem 1.25rem;
+    font-size: 1rem;
+  }
+
+  .status-msg {
+    padding: 1.75rem 1.25rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 380px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  body {
+    padding: 1.5rem 1rem;
+  }
+}
