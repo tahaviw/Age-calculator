@@ -16,7 +16,7 @@ A highly accurate, client-side web application designed to calculate precise chr
 - JavaScript ES6: Modular design patterns featuring native `import`/`export` syntax.
 - npm Packages: Powered by the lightweight `dayjs` package for dependable temporal arithmetic and standardizations.
 
-## You can view the live demo of the project here:https://age-calculator-tahaviw.netlify.app/
+## You can view the live demo of the project here: https://age-calculator-tahaviw.netlify.app/
 
 ## Installation & Setup
 
